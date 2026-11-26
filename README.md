@@ -19,13 +19,31 @@ Gen-AI_2520030422/
 │   ├── test-client.py       # Unit tests with FakeProvider
 │   ├── requirements.txt     # Python dependencies
 │   └── .env.example         # Template for environment variables
-└── Week3/
-    ├── cost_calculator.py   # Token and cost calculation utilities
-    ├── llm_client.py        # Multi-provider client with token tracking
-    ├── mongo_logger.py      # MongoDB integration for audit logging
-    ├── main.py              # Interactive application with cost & DB logging
+├── Week3/
+│   ├── cost_calculator.py   # Token and cost calculation utilities
+│   ├── llm_client.py        # Multi-provider client with token tracking
+│   ├── mongo_logger.py      # MongoDB integration for audit logging
+│   ├── main.py              # Interactive application with cost & DB logging
+│   ├── requirements.txt     # Python dependencies
+│   └── .env.example         # Template for environment variables
+├── Week4/
+│   ├── main.py              # Multilingual tokenizer comparison (BPE, WordPiece, SentencePiece)
+│   ├── requirements.txt     # Python dependencies
+│   ├── tokenizer_results.csv# Exported token count & ratio comparison results
+│   ├── Week-4.docx          # Week 4 lab report
+│   └── Screenshot *.png     # Execution screenshots
+├── Week5/
+│   ├── main.py              # Tokenization comparison, API cost & context window calculator
+│   ├── week5_token_comparison.csv # Exported multilingual token comparison results
+│   ├── WEEK5 code.docx      # Week 5 lab report
+│   └── Screenshot *.png     # Execution screenshots
+└── Week6/
+    ├── main.py              # Baseline LLM evaluation runner against golden question set
+    ├── golden_set.json      # Golden Q&A evaluation dataset with keywords
+    ├── baseline_results.csv # Exported evaluation scores and responses
     ├── requirements.txt     # Python dependencies
-    └── .env.example         # Template for environment variables
+    ├── Week6.docx           # Week 6 lab report
+    └── Screenshot *.png     # Execution screenshots
 ```
 
 ---
@@ -48,6 +66,19 @@ Gen-AI_2520030422/
 - Real-time token usage tracking for input and output.
 - Dynamic cost calculation across model tiers.
 - MongoDB persistence for query prompts, responses, token counts, and execution metrics.
+
+### Week 4: Tokenizer Comparison Lab
+- Compares BPE (`openai-community/gpt2`), WordPiece (`google-bert/bert-base-multilingual-cased`), and SentencePiece Unigram (`google/mt5-small`) across English, Telugu, and Hindi text.
+- Computes token counts and token-to-word ratios and exports results to `tokenizer_results.csv`.
+
+### Week 5: Tokenization & Token Economics
+- Evaluates multilingual tokenization overhead across English, Telugu, and Hindi (`week5_token_comparison.csv`).
+- Models daily and monthly LLM API costs from input/output token rates and usage assumptions.
+- Calculates context window utilization across system, conversation, and user input tokens.
+
+### Week 6: Golden Set Baseline Evaluation
+- Evaluates a local Ollama model (`llama3.2`) against `golden_set.json` using keyword-coverage scoring.
+- Assigns `PASS`/`REVIEW`/`ERROR` status per question and exports baseline `v0.1` metrics to `baseline_results.csv`.
 
 ---
 
