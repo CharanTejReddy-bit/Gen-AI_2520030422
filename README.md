@@ -44,11 +44,15 @@ Gen-AI_2520030422/
 │   ├── requirements.txt     # Python dependencies
 │   ├── Week6.docx           # Week 6 lab report
 │   └── Screenshot *.png     # Execution screenshots
-└── Week7/
-    ├── main.py              # Next-token logits & top-k probability inspection with GPT-2
+├── Week7/
+│   ├── main.py              # Next-token logits & top-k probability inspection with GPT-2
+│   ├── requirements.txt     # Python dependencies
+│   ├── week7_probability_results.csv # Exported top-k candidate token probabilities
+│   └── Week7.docx           # Week 7 lab document
+└── Week8/
+    ├── main.py              # Scaled Dot-Product & Multi-Head Attention from scratch in PyTorch
     ├── requirements.txt     # Python dependencies
-    ├── week7_probability_results.csv # Exported top-k candidate token probabilities
-    └── Week7.docx           # Week 7 lab document
+    └── Week8.docx           # Week 8 lab document
 ```
 
 ---
@@ -89,6 +93,11 @@ Gen-AI_2520030422/
 - Loads `openai-community/gpt2` using Hugging Face `transformers` and PyTorch (`torch`).
 - Inspects raw next-token logits, applies softmax to compute probabilities, and extracts top-5 candidate tokens across sample prompts.
 - Exports prompt, rank, candidate token, token ID, and probability results to `week7_probability_results.csv`.
+
+### Week 8: Scaled Dot-Product & Multi-Head Attention
+- Implements `scaled_dot_product_attention` (with optional causal masking) from scratch using PyTorch.
+- Implements a `MultiHeadAttention` `nn.Module` with linear projections (`W_Q`, `W_K`, `W_V`, `W_O`) and head splitting/recombination.
+- Verifies tensor shapes and outputs for both single-head and multi-head attention.
 
 ---
 
