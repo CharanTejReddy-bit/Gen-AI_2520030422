@@ -37,13 +37,18 @@ Gen-AI_2520030422/
 │   ├── week5_token_comparison.csv # Exported multilingual token comparison results
 │   ├── WEEK5 code.docx      # Week 5 lab report
 │   └── Screenshot *.png     # Execution screenshots
-└── Week6/
-    ├── main.py              # Baseline LLM evaluation runner against golden question set
-    ├── golden_set.json      # Golden Q&A evaluation dataset with keywords
-    ├── baseline_results.csv # Exported evaluation scores and responses
+├── Week6/
+│   ├── main.py              # Baseline LLM evaluation runner against golden question set
+│   ├── golden_set.json      # Golden Q&A evaluation dataset with keywords
+│   ├── baseline_results.csv # Exported evaluation scores and responses
+│   ├── requirements.txt     # Python dependencies
+│   ├── Week6.docx           # Week 6 lab report
+│   └── Screenshot *.png     # Execution screenshots
+└── Week7/
+    ├── main.py              # Next-token logits & top-k probability inspection with GPT-2
     ├── requirements.txt     # Python dependencies
-    ├── Week6.docx           # Week 6 lab report
-    └── Screenshot *.png     # Execution screenshots
+    ├── week7_probability_results.csv # Exported top-k candidate token probabilities
+    └── Week7.docx           # Week 7 lab document
 ```
 
 ---
@@ -79,6 +84,11 @@ Gen-AI_2520030422/
 ### Week 6: Golden Set Baseline Evaluation
 - Evaluates a local Ollama model (`llama3.2`) against `golden_set.json` using keyword-coverage scoring.
 - Assigns `PASS`/`REVIEW`/`ERROR` status per question and exports baseline `v0.1` metrics to `baseline_results.csv`.
+
+### Week 7: Next-Token Probabilities & Logits Inspection
+- Loads `openai-community/gpt2` using Hugging Face `transformers` and PyTorch (`torch`).
+- Inspects raw next-token logits, applies softmax to compute probabilities, and extracts top-5 candidate tokens across sample prompts.
+- Exports prompt, rank, candidate token, token ID, and probability results to `week7_probability_results.csv`.
 
 ---
 
